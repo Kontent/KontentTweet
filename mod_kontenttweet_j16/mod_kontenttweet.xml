@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="update">
+	<name>KontentTweet Module</name>
+	<version>1.0</version>
+	<creationDate>23-11-2010</creationDate>
+	<author>Kontent Design</author>
+	<authorEmail>support@kontentdesign.com</authorEmail>
+	<authorUrl>http://extensions.kontentdesign.com</authorUrl>
+	<copyright>©2010 Kontent Design</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<description>
+		<![CDATA[
+			<style type="text/css">
+				.kontenttweet-install {
+					text-align:center;
+					width:90%;
+				}
+				.kontenttweet img {
+					margin-bottom: 10px;
+				}
+				
+				table.adminform .kontenttweet-config {
+					display:none;
+				}
+				#module-form .mod-desc .kontenttweet-install {
+					display:none;
+				}
+			</style>
+			<div class="kontenttweet-install">
+				<div class="kontenttweet">
+					<a href="http://extensions.kontentdesign.com/extensions/kontent-tweet" target="_blank"><img style="float:none" border="0" src="http://extensions.kontentdesign.com/images/install/icon_kontenttweet.png" alt="KontentTweet" /></a>
+				</div>
+				<div class="kontentdesc"><p>KontentTweet: The easiest way to integrate Twitter with your Joomla website.</p></div>
+				<div class="kontentext">
+					<a href="http://extensions.kontentdesign.com" target="_blank"><img style="float:none"  border="0" src="http://extensions.kontentdesign.com/images/install/logo_kontentextensions.png" alt="Kontent Extensions" /></a>
+				</div>
+			</div>
+			<div class="kontenttweet-config">
+				<p><a href="http://extensions.kontentdesign.com/extensions/kontent-tweet" target="_blank">KontentTweet</a>: The easiest way to integrate Twitter with your Joomla website. More information at <a href="http://extensions.kontentdesign.com" target="_blank">Kontent Extensions</a></p>
+			</div>
+  		]]>
+	</description>
+	
+	<files>
+		<filename module="mod_kontenttweet">mod_kontenttweet.php</filename>
+		<folder>includes</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>class.twitter.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB" >en-GB/en-GB.mod_kontenttweet.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="username" type="text" default="" size="80" label="MOD_KONTENTTWEET_TWITTER_USERNAME" description="MOD_KONTENTTWEET_TWITTER_USERNAME_DESC" />
+				
+				<field name="consumer_key" type="password" default="" size="80" label="MOD_KONTENTTWEET_TWITTER_CONSUMER_KEY" description="MOD_KONTENTTWEET_TWITTER_CONSUMER_KEY_DESC" />
+				
+				<field name="consumer_secret" type="password" default="" size="80" label="MOD_KONTENTTWEET_TWITTER_CONSUMER_SECRET" description="MOD_KONTENTTWEET_TWITTER_CONSUMER_SECRET_DESC" />
+				
+				<field name="oauth_callback" type="text" default="" size="80" label="MOD_KONTENTTWEET_TWITTER_CALLBACK" description="MOD_KONTENTTWEET_TWITTER_CALLBACK_DESC" />
+				
+				<field name="oauth_token" type="password" default="" size="80" label="MOD_KONTENTTWEET_TWITTER_TOKEN" description="MOD_KONTENTTWEET_TWITTER_TOKEN_DESC" />
+				
+				<field name="oauth_token_secret" type="password" default="" size="80" label="MOD_KONTENTTWEET_TWITTER_TOKEN_SECRET" description="MOD_KONTENTTWEET_TWITTER_TOKEN_SECRET_DESC" />
+				
+				<field name="show-link" type="list" default="1" label="MOD_KONTENTTWEET_TWITTER_SHOW_LINK" description="MOD_KONTENTTWEET_TWITTER_SHOW_LINK_DESC">
+					<option value="0">MOD_KONTENTTWEET_TWITTER_NO</option>
+					<option value="1">MOD_KONTENTTWEET_TWITTER_YES</option>
+				</field>
+		
+				<field name="timeline" type="list" default="user" label="MOD_KONTENTTWEET_TWITTER_TIMELINE" description="MOD_KONTENTTWEET_TWITTER_TIMELINE_DESC">
+					<option value="user">MOD_KONTENTTWEET_TWITTER_USER_ONLY</option>
+					<option value="friends">MOD_KONTENTTWEET_TWITTER_USER_FRIEND</option>
+					<option value="friendsonly">MOD_KONTENTTWEET_TWITTER_FRIEND_ONLY</option>
+				</field>
+				
+				<field name="count" type="text" default="3" label="MOD_KONTENTTWEET_TWITTER_NUMBER" description="MOD_KONTENTTWEET_TWITTER_NUMBER_DESC" />
+				
+				<field name="show-image" type="list" default="1" label="MOD_KONTENTTWEET_TWITTER_SHOW_IMAGE" description="MOD_KONTENTTWEET_TWITTER_SHOW_IMAGE_DESC">
+					<option value="0">MOD_KONTENTTWEET_TWITTER_NO</option>
+					<option value="1">MOD_KONTENTTWEET_TWITTER_YES</option>
+				</field>
+				
+				<field name="show-username" type="list" default="1" label="MOD_KONTENTTWEET_TWITTER_SHOW_NAME" description="MOD_KONTENTTWEET_TWITTER_SHOW_NAME_DESC">
+					<option value="0">MOD_KONTENTTWEET_TWITTER_NO</option>
+					<option value="1">MOD_KONTENTTWEET_TWITTER_YES</option>
+				</field>
+				
+				<field name="show-date" type="list" default="0" label="MOD_KONTENTTWEET_TWITTER_SHOW_DATE" description="MOD_KONTENTTWEET_TWITTER_SHOW_DATE_DESC">
+					<option value="0">MOD_KONTENTTWEET_TWITTER_NO</option>
+					<option value="1">MOD_KONTENTTWEET_TWITTER_YES</option>
+				</field>
+				
+				<field name="parse-links" type="list" default="1" label="MOD_KONTENTTWEET_TWITTER_PARSE" description="MOD_KONTENTTWEET_TWITTER_PARSE_DESC">
+					<option value="0">MOD_KONTENTTWEET_TWITTER_NO</option>
+					<option value="1">MOD_KONTENTTWEET_TWITTER_YES</option>
+				</field>
+				<field name="moduleclass_sfx" type="text" default="" label="MOD_KONTENTTWEET_TWITTER_MODULE_SUFFIX" description="MOD_KONTENTTWEET_TWITTER_MODULE_SUFFIX_DESC" />
+				
+				<field name="enable-css" type="list" default="1" label="MOD_KONTENTTWEET_TWITTER_USE_CSS" description="MOD_KONTENTTWEET_TWITTER_USE_CSS_DESC">
+					<option value="0">MOD_KONTENTTWEET_TWITTER_NO</option>
+					<option value="1">MOD_KONTENTTWEET_TWITTER_YES</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="enable-cache" type="list" default="1" label="MOD_KONTENTTWEET_TWITTER_CACHE" description="MOD_KONTENTTWEET_TWITTER_CACHE_DESC">
+					   <option value="0">MOD_KONTENTTWEET_TWITTER_NO</option>
+					   <option value="1">MOD_KONTENTTWEET_TWITTER_YES</option>
+				</field>
+				<field name="cache-time" type="text" default="30" label="MOD_KONTENTTWEET_TWITTER_CACHE_REFRESH" description="MOD_KONTENTTWEET_TWITTER_CACHE_REFRESH_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
